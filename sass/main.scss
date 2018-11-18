@@ -1,0 +1,8 @@
+@import 'vars';
+
+h1{
+    font-family: $titlefont;
+    color: $teal;
+    font-size: $titlesize;
+    font-weight: $titleweight;
+}

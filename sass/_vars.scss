@@ -1,0 +1,29 @@
+//colors
+$teal: #95DBDC;
+$yellow: #F2D261;
+$text: #A3A3A3;
+
+//backgrounds
+$bckgd-color: rgba(28, 28, 28, 0.9);
+$bckgd-img: url("images/bckgd.svg");
+
+//fonts
+@font-face {
+    font-family: Raleway-Black;
+    src: url(../fonts/Raleway-Black.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Raleway-Thin;
+    src: url(../fonts/Raleway-Thin.ttf);
+    font-weight: thin;
+}
+
+$titlefont: 'Raleway-Black', 'Arial', sans-serif;
+$titleweight: bold;
+$titlesize: 80px;
+
+$copyfont: 'Raleway-Thin', 'Arial', sans-serif;
+$copyweight: thin;
+$copysize: 20px;
