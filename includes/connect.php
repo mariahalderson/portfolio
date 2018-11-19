@@ -13,17 +13,25 @@ if(!$connect){
     exit;
 }
 
-//echo "connected!";
+//echo "connected!"; 
 
-if(isset($_GET["imagename"])) {
-$images = $_GET["imagename"];
-$query = "SELECT * FROM tbl_images WHERE images_name = '$images'";
+// if(isset($_GET["imagename"])) {
+// $images = $_GET["imagename"];
+// $query = "SELECT * FROM tbl_images WHERE images_name = '$images'";
+// $result = mysqli_query($connect, $query);
+// $rows = array();
+
+// while($row = mysqli_fetch_assoc($result)){
+//     $rows[] = $row;
+// }
+// }
+
+$query= "SELECT * FROM tbl_images WHERE images_name = 'logo'";
 $result = mysqli_query($connect, $query);
 $rows = array();
 
 while($row = mysqli_fetch_assoc($result)){
     $rows[] = $row;
-}
 }
 
 echo json_encode($rows);
