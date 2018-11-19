@@ -1,16 +1,22 @@
 const vm = new Vue({
     el: "#app",
+    
 
     data: {
         logo: "",
         message: "test"
     },
 
+    created(){
+      this.getData();
+    },
+
     methods: {
 
         getData(e) {
             //debugger;
-            let targetURL = `./includes/connect.php?imagename=${e.currentTarget.id}`;
+            //let targetURL = `./includes/connect.php?imagename=${e.currentTarget.id}`;
+            let targetURL = "./includes/connect.php?imagename=logo";
             fetch(targetURL) // go get the data and bring it back
               .then(res => res.json()) // turn the result into a plain JS object
               .then(data => {
@@ -26,8 +32,8 @@ const vm = new Vue({
       
           showData(data) {
             //console.log(data);
-            this.logo = data.images_path;
-            document.querySelector("img").src = "images/" + this.logo;
+            this.logo = "images/" + data.images_path;
+            //document.querySelector("img").src = "images/" + this.logo;
           }
 
     }
