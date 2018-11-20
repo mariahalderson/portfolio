@@ -9,12 +9,33 @@
     <title>Mariah Alderson | Front End Developer</title>
 </head>
 <body>
-
+    <h1 class="hide">Mariah Alderson Web Developer</h1>
     <main id="app">
      <!-- this was only used when i was testing with click -> <h1 v-on:click="getData" id="logo">{{message}}</h1>
      this was my attempt to pull info on page load -> <div id="logotest"> 
         <img :src="logo" alt="Mariah Alderson Logo">
     </div>  -->
+
+    <section id="landing">
+        <h2 class="hide">Welcome</h2>
+        <header>
+            <div id="logocontainer">
+                <img src="images/logo.svg" alt="Mariah Alderson Logo">
+            </div>
+            <h2 class="title">mariah alderson</h2>
+            <ul>
+                <li class="copy" v-for= "mytitle in mytitles">
+                    {{mytitle.title}}
+                </li>
+
+                <nav id="main navigation">
+                    <a class="navitem">portfolio</a>
+                    <a class="navitem">about</a>
+                    <a class="navitem"> resume</a>
+                </nav>
+            </ul>
+        </header>
+    </section>
 
 
 

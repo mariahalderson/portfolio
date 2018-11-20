@@ -4,7 +4,12 @@ const vm = new Vue({
 
     data: {
         logo: "",
-        message: "test"
+        message: "test",
+        mytitles: [
+          {title: "front-end developer"},
+          {title: "UX designer"},
+          {title: "a third thing"}
+        ]
     },
 
     created(){
