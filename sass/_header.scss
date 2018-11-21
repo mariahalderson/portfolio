@@ -1,0 +1,220 @@
+@import 'vars';
+@import 'animations';
+
+
+//header
+header{
+    position: fixed;
+    z-index: 99;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 70px;
+    width: 100vw;
+    background-color: $bckgd-color;
+    transition: all 0.2s ease-out;
+
+    #maintitles{
+        width: 100%;
+
+        .title{
+            opacity: 0;
+            transform: translateY(-15px);
+            transition: all 0.8s linear;
+        }
+
+        .subtitle{
+            opacity: 0;
+            transform: translateY(-15px);
+            transition: all 0.8s linear;
+        }
+    }
+
+    #logocontainer{
+
+        width: 90px;
+        transform: translateY(15px);
+        display: flex;
+        justify-content: center;
+
+        img{
+            max-width: 100%;
+            display: block;
+        }
+    }
+
+    //nav links
+    a{
+        font-size: 20px;
+        font-family: 'Raleway-Black';
+        color: $text;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        .arrow{
+            width: 0; 
+            height: 0;
+        }
+
+        .leftarrow{
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent; 
+            border-right:15px solid rgba($text, 0.4); 
+        }
+
+        .rightarrow{
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent; 
+            border-left:15px solid rgba($text, 0.4); 
+        }
+
+        .downarrow{
+            border-top: 15px solid rgba($text, 0.4);
+            border-right: 15px solid transparent; 
+            border-left:15px solid transparent; 
+        }
+    }
+
+    #portfolio{
+        transition: all 0.4s ease-out;
+        position: fixed;
+        z-index: 99;
+        bottom: 10px;
+        left: 50%;
+        margin-left: -42px;
+
+        color: $bckgd-color;
+
+        .arrow{
+            transition: all 0.3s ease;
+            border-top-color: $bckgd-color;
+        }
+    }
+
+    #about{
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transition: all 0.4s ease-out;
+        position: fixed;
+        color: $bckgd-color;
+        left: 10px;
+        bottom: 50%;
+        margin-bottom: -29px;
+
+        .arrow{
+            transition: all 0.3s ease;
+            border-right-color: $bckgd-color;
+        }
+    }
+
+    #resume{
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transition: all 0.4s ease-out;
+        position: fixed;
+        transform: rotate(180deg);
+        color: $bckgd-color;
+        right: 10px;
+        bottom: 50%;
+        margin-bottom: -40px;
+
+        .arrow{
+            transition: all 0.3s ease;
+            border-right-color: $bckgd-color;
+        }
+    }
+}
+
+//full screen header
+header.fullscreen{
+    display: grid;
+    // grid-template-columns: repeat(6, 1fr);
+    // grid-template-rows: repeat(3,1fr);
+    //align-items: center;
+    height: 100vh;
+    //padding: 0px 10px;
+    
+
+    #maintitles{
+        grid-column: 1 / -1;
+        grid-row-start: 1;
+
+        .title{
+            opacity:1;
+            transform: translateY(0px);
+            margin-bottom: 0;
+        }
+
+        .subtitle{
+            text-align: center;
+            margin: 0;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    #logocontainer{
+        grid-column:1/-1;
+        grid-row: 1/-1;
+        width: auto;
+        max-width: 100%;
+        align-self: center;
+        
+        transform: translateY(0px);
+       
+        img{
+            //height: 100% !important;
+            max-width: 90%;
+            
+        }
+    }
+    //navigation
+    //nav{
+        
+
+        #portfolio{
+            color: $text;
+            bottom: 50%;
+            margin-bottom: -150px;
+
+            .arrow{
+                animation: arrowsd 1s linear infinite;
+                border-top-color: rgba($text, 0.4);
+            }
+        }
+
+        #about{
+           left: 20px;
+           color: $text;
+            .arrow{
+                animation: arrowsl 1s linear infinite;
+                border-right-color: rgba($text, 0.4);
+            }
+        }
+
+        #resume{
+            right: 20px;
+            color: $text;
+
+            .arrow{
+                animation: arrowsl 1s linear infinite;
+                border-right-color: rgba($text, 0.4);
+            }
+        }
+    //}
+
+}
+
+//home page
+
+#landing{
+    transition: all 0.4s linear;
+    background-image: url("../images/bckgd.svg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    //background-size: cover;
+    height: 100vh;
+}

@@ -45,7 +45,52 @@ const vm = new Vue({
             //console.log(data);
             this.logo = "images/" + data.images_path;
             //document.querySelector("img").src = "images/" + this.logo;
+          },
+
+          navclick(){
+            var pageheader = document.querySelector("header");
+            var scrollheight = pageheader.offsetHeight;
+            var homepage = document.querySelector("#landing");
+            var porttext=document.querySelector("#portfolio");
+            //var portarrow = document.querySelector("#portfolio .arrow");
+
+            
+            //portarrow.style.transform="rotate(180deg)";
+            // portarrow.style.borderBottom="15px solid $bckgd-color";
+            // portarrow.style.borderTopColor="transparent";
+            // portarrow.style.borderTop="";
+            
+            pageheader.classList.toggle("fullscreen");
+            setTimeout(function(){
+            if(pageheader.classList.contains("fullscreen")){
+            
+              //window.scrollTo(0,scrollheight);
+              homepage.style.height="100vh";
+              porttext.innerHTML="<div class='arrow downarrow'></div>portfolio";
+              porttext.style.marginLeft="-42px";
+              homepage.style.backgroundSize="auto";
+              document.querySelector("#projects").style.backgroundAttachment="scroll";
+              setTimeout(function(){
+                window.scrollTo(0,0);
+               },300);
+            }else{
+              homepage.style.backgroundSize="cover";
+              homepage.style.height="0px";
+              setTimeout(function(){
+              document.querySelector("#projects").style.backgroundAttachment="fixed";
+              },300);
+              porttext.innerHTML="<div class='arrow downarrow'></div>home";
+              porttext.style.marginLeft="-27px";
+      
+            }},200);
+
+          
+          
           }
+
+            
+
+          
 
     }
 

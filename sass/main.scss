@@ -1,5 +1,10 @@
 @import 'vars';
 @import 'animations';
+@import 'header';
+
+html{
+    scroll-behavior: smooth;
+}
 
 section{
     margin: 0;
@@ -42,124 +47,8 @@ body{
     overflow-x: hidden;
 }
 
-//home page
 
-#landing{
-    background-image: url("../images/bckgd.svg");
-    background-repeat: no-repeat;
-    background-position: center bottom;
-header{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3,1fr);
-    align-content: center;
-    height: 100vh;
-    padding: 0px 10px;
-    background-color: $bckgd-color;
 
-    .title{
-        grid-column: 1  /-1;
-        text-align: center;
-        grid-row: 1/2;
-    }
-
-    .subtitle{
-        grid-column: 1 / -1;
-        text-align: center;
-        grid-row: 1/2;
-        margin-top: 60px;
-    }
-
-    #logocontainer{
-        grid-column: 2 / 6;
-        grid-row: 2 / 3;
-        max-width: 100%;
-        align-self: end;
-        display: flex;
-        justify-content: center;
-       
-        img{
-            //height: 100% !important;
-            max-width: 90%;
-            display: block;
-        }
-    }
-
-//navigation
-    //nav{
-        a{
-            font-size: 20px;
-            font-family: 'Raleway-Black';
-            color: $text;
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: center;
-
-            .arrow{
-                width: 0; 
-                height: 0;
-            }
-
-            .leftarrow{
-                border-top: 15px solid transparent;
-                border-bottom: 15px solid transparent; 
-                border-right:15px solid rgba($text, 0.4); 
-            }
-
-            .rightarrow{
-                border-top: 15px solid transparent;
-                border-bottom: 15px solid transparent; 
-                border-left:15px solid rgba($text, 0.4); 
-            }
-
-            .downarrow{
-                border-top: 15px solid rgba($text, 0.4);;
-                border-right: 15px solid transparent; 
-                border-left:15px solid transparent; 
-            }
-        }
-
-        #portfolio{
-            grid-column: 1 / -1;
-            grid-row: 3 / 4;
-            align-self:start;
-            justify-self: center;
-            margin-top: 20px;
-
-            .arrow{
-                animation: arrowsd 1s linear infinite;
-            }
-        }
-
-        #about{
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            grid-column: 1 / 2;
-            grid-row: 2 / 3;
-            justify-self: start;
-            align-self: center;
-            
-            .arrow{
-                animation: arrowsl 1s linear infinite;
-            }
-        }
-
-        #resume{
-            grid-column: 6 / -1;
-            grid-row: 2 / 3;
-            justify-self: end;
-            align-self: center;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            transform: rotate(180deg);
-
-            .arrow{
-                animation: arrowsl 1s linear infinite;
-            }
-        }
-    //}
-}
-}
 
 //projects section
 #projects{

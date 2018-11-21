@@ -15,7 +15,7 @@
 
     <section id="landing">
         <h2 class="hide">Welcome</h2>
-        <header>
+        <header class="fullscreen">
             <div id="logocontainer">
                 <img src="images/logo.svg" alt="Mariah Alderson Logo">
             </div>
@@ -26,12 +26,12 @@
                     {{mytitle.title}}
                 </li>
 </ul> -->
-
-                <p class="title">mariah alderson</p>
-                <p class="subtitle">front-end developer   |   UX designer</p>
-
+                <div id="maintitles">
+                    <p class="title">mariah alderson</p>
+                    <p class="subtitle">front-end developer   |   UX designer</p>
+                </div>
                 <!-- <nav id="main navigation"> -->
-                    <a class="navitem" id="portfolio"><div class="arrow downarrow"></div>portfolio</a>
+                    <a class="navitem" id="portfolio" v-on:click="navclick"><div class="arrow downarrow"></div>portfolio</a>
                     <a class="navitem" id="about"><div class="arrow leftarrow"></div>about</a>
                     <a class="navitem" id="resume"><div class="arrow leftarrow"></div> resume</a>
                 <!-- </nav> -->
