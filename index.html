@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
     <title>Mariah Alderson | Front End Developer</title>
 </head>
 <body>
     <h1 class="hide">Mariah Alderson Web Developer</h1>
+
     <main id="app">
-     <!-- this was only used when i was testing with click -> <h1 v-on:click="getData" id="logo">{{message}}</h1>
-     this was my attempt to pull info on page load -> <div id="logotest"> 
-        <img :src="logo" alt="Mariah Alderson Logo">
-    </div>  -->
 
     <section id="landing">
         <h2 class="hide">Welcome</h2>
@@ -22,19 +19,41 @@
             <div id="logocontainer">
                 <img src="images/logo.svg" alt="Mariah Alderson Logo">
             </div>
-            <h2 class="title">mariah alderson</h2>
+
+            <!-- <h2 class="title">mariah alderson</h2>
             <ul>
                 <li class="copy" v-for= "mytitle in mytitles">
                     {{mytitle.title}}
                 </li>
+</ul> -->
 
-                <nav id="main navigation">
-                    <a class="navitem">portfolio</a>
-                    <a class="navitem">about</a>
-                    <a class="navitem"> resume</a>
-                </nav>
-            </ul>
+                <p class="title">mariah alderson</p>
+                <p class="subtitle">front-end devloper   |   UX designer</p>
+
+                <!-- <nav id="main navigation"> -->
+                    <a class="navitem" id="portfolio"><div class="arrow downarrow"></div>portfolio</a>
+                    <a class="navitem" id="about"><div class="arrow leftarrow"></div>about</a>
+                    <a class="navitem" id="resume"><div class="arrow leftarrow"></div> resume</a>
+                <!-- </nav> -->
+            
         </header>
+    </section>
+
+    <section id="projects">
+        <h2 class="hide">Spotlight Projects</h2>
+
+        <div id="grid-container">
+            <div v-for="project in projects">
+                <img :src="project.projectpath" :alt="project.projecttitle">
+
+                <div class="hover-info">
+                    <p class="title">{{project.projecttitle}}</p>
+                    <p class="subtitle">{{project.projecttype}}</p>
+
+                    <div class="viewbutton button" :id="project.projectid"><p>learn more</p></div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
