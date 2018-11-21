@@ -36,6 +36,218 @@
     transform: translateY(0px);
   }
 }
+@font-face {
+  font-family: Raleway-Black;
+  src: url(../fonts/Raleway-Black.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: Raleway-Thin;
+  src: url(../fonts/Raleway-Thin.ttf);
+  font-weight: thin;
+}
+@keyframes arrowsl {
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes arrowsd {
+  25% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+header {
+  position: fixed;
+  z-index: 99;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 70px;
+  width: 100vw;
+  background-color: rgba(28, 28, 28, 0.9);
+  transition: all 0.2s ease-out;
+}
+header #maintitles {
+  width: 100%;
+}
+header #maintitles .title {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: all 0.2s linear;
+}
+header #maintitles .subtitle {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: all 0.2s linear;
+}
+header #logocontainer {
+  width: 90px;
+  transform: translateY(15px);
+  display: flex;
+  justify-content: center;
+}
+header #logocontainer img {
+  max-width: 100%;
+  display: block;
+}
+header a {
+  font-size: 20px;
+  font-family: "Raleway-Black";
+  color: #A3A3A3;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+header a .arrow {
+  width: 0;
+  height: 0;
+}
+header a .leftarrow {
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid rgba(163, 163, 163, 0.4);
+}
+header a .rightarrow {
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid rgba(163, 163, 163, 0.4);
+}
+header a .downarrow {
+  border-top: 15px solid rgba(163, 163, 163, 0.4);
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+header #portfolio {
+  transition: all 0.4s ease-out;
+  position: fixed;
+  z-index: 99;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -42px;
+  color: rgba(28, 28, 28, 0.9);
+}
+header #portfolio .arrow {
+  transition: all 0.3s ease;
+  border-top-color: rgba(28, 28, 28, 0.9);
+}
+header #about {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transition: all 0.4s ease-out;
+  position: fixed;
+  color: rgba(28, 28, 28, 0.9);
+  left: 10px;
+  bottom: 50%;
+  margin-bottom: -29px;
+}
+header #about .arrow {
+  transition: all 0.3s ease;
+  border-right-color: rgba(28, 28, 28, 0.9);
+}
+header #resume {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transition: all 0.4s ease-out;
+  position: fixed;
+  transform: rotate(180deg);
+  color: rgba(28, 28, 28, 0.9);
+  right: 10px;
+  bottom: 50%;
+  margin-bottom: -40px;
+}
+header #resume .arrow {
+  transition: all 0.3s ease;
+  border-right-color: rgba(28, 28, 28, 0.9);
+}
+
+header.fullscreen {
+  display: grid;
+  height: 100vh;
+}
+header.fullscreen #maintitles {
+  grid-column: 1/-1;
+  grid-row-start: 1;
+}
+header.fullscreen #maintitles .title {
+  opacity: 1;
+  transform: translateY(0px);
+  margin-bottom: 0;
+}
+header.fullscreen #maintitles .subtitle {
+  text-align: center;
+  margin: 0;
+  opacity: 1;
+  transform: translateY(0px);
+}
+header.fullscreen #logocontainer {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: auto;
+  max-width: 100%;
+  align-self: center;
+  transform: translateY(0px);
+}
+header.fullscreen #logocontainer img {
+  max-width: 90%;
+}
+header.fullscreen #portfolio {
+  color: #A3A3A3;
+  bottom: 50%;
+  margin-bottom: -150px;
+}
+header.fullscreen #portfolio .arrow {
+  animation: arrowsd 1s linear infinite;
+  border-top-color: rgba(163, 163, 163, 0.4);
+}
+header.fullscreen #about {
+  left: 20px;
+  color: #A3A3A3;
+}
+header.fullscreen #about .arrow {
+  animation: arrowsl 1s linear infinite;
+  border-right-color: rgba(163, 163, 163, 0.4);
+}
+header.fullscreen #resume {
+  right: 20px;
+  color: #A3A3A3;
+}
+header.fullscreen #resume .arrow {
+  animation: arrowsl 1s linear infinite;
+  border-right-color: rgba(163, 163, 163, 0.4);
+}
+
+#landing {
+  transition: all 0.4s linear;
+  background-image: url("../images/bckgd.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 section {
   margin: 0;
 }
@@ -73,104 +285,6 @@ section {
 
 body {
   overflow-x: hidden;
-}
-
-#landing {
-  background-image: url("../images/bckgd.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-}
-#landing header {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  align-content: center;
-  height: 100vh;
-  padding: 0px 10px;
-  background-color: rgba(28, 28, 28, 0.9);
-}
-#landing header .title {
-  grid-column: 1/-1;
-  text-align: center;
-  grid-row: 1/2;
-}
-#landing header .subtitle {
-  grid-column: 1/-1;
-  text-align: center;
-  grid-row: 1/2;
-  margin-top: 60px;
-}
-#landing header #logocontainer {
-  grid-column: 2/6;
-  grid-row: 2/3;
-  max-width: 100%;
-  align-self: end;
-  display: flex;
-  justify-content: center;
-}
-#landing header #logocontainer img {
-  max-width: 90%;
-  display: block;
-}
-#landing header a {
-  font-size: 20px;
-  font-family: "Raleway-Black";
-  color: #A3A3A3;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-}
-#landing header a .arrow {
-  width: 0;
-  height: 0;
-}
-#landing header a .leftarrow {
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-right: 15px solid rgba(163, 163, 163, 0.4);
-}
-#landing header a .rightarrow {
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid rgba(163, 163, 163, 0.4);
-}
-#landing header a .downarrow {
-  border-top: 15px solid rgba(163, 163, 163, 0.4);
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-}
-#landing header #portfolio {
-  grid-column: 1/-1;
-  grid-row: 3/4;
-  align-self: start;
-  justify-self: center;
-  margin-top: 20px;
-}
-#landing header #portfolio .arrow {
-  animation: arrowsd 1s linear infinite;
-}
-#landing header #about {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  grid-column: 1/2;
-  grid-row: 2/3;
-  justify-self: start;
-  align-self: center;
-}
-#landing header #about .arrow {
-  animation: arrowsl 1s linear infinite;
-}
-#landing header #resume {
-  grid-column: 6/-1;
-  grid-row: 2/3;
-  justify-self: end;
-  align-self: center;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-}
-#landing header #resume .arrow {
-  animation: arrowsl 1s linear infinite;
 }
 
 #projects {
