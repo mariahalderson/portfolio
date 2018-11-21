@@ -1,12 +1,17 @@
 @import 'vars';
 @import 'animations';
 
+section{
+    margin: 0;
+}
 
 .title{
     font-family: $titlefont;
     color: $teal;
+    //color: red;
     font-size: 30px;
     font-weight: $titleweight;
+    text-align: center;
 }
 
 .subtitle{
@@ -18,6 +23,19 @@
 
 .hide{
     display: none;
+}
+
+.button{
+    width: 200px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid $yellow;
+    color: $yellow;
+    font-size: 20px;
+    font-family: $copyfont;
+    margin: 0 auto;
 }
 
 body{
@@ -55,11 +73,15 @@ header{
     #logocontainer{
         grid-column: 2 / 6;
         grid-row: 2 / 3;
-        max-width: 175px;
-        align-self: end; 
+        max-width: 100%;
+        align-self: end;
+        display: flex;
+        justify-content: center;
        
         img{
-            max-width: 100%;
+            //height: 100% !important;
+            max-width: 90%;
+            display: block;
         }
     }
 
@@ -102,6 +124,7 @@ header{
             grid-row: 3 / 4;
             align-self:start;
             justify-self: center;
+            margin-top: 20px;
 
             .arrow{
                 animation: arrowsd 1s linear infinite;
@@ -136,4 +159,61 @@ header{
         }
     //}
 }
+}
+
+//projects section
+#projects{
+    background-image: url("../images/bckgd-mirror.svg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding-top: 220px;
+
+    .title{
+        margin-top: 0;
+    }
+    #grid-container{
+        //border: 1px solid #000;
+        //max-width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 325px);
+        justify-content: center;
+
+        .project-tile{
+            display: grid;
+            min-width: 320px;
+            min-height: 320px;
+            background-color: $teal;
+            border: 2px solid $text;
+
+            img{
+                z-index: 1;
+                grid-row-start: 1;
+                grid-column-start: 1;
+            }
+
+            .hover-info{
+                grid-row-start: 1;
+                grid-column-start: 1;
+                padding: 7px;
+                background-color: rgba(0,0,0,0.3);
+                text-align: center;
+                z-index: 2;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .title{
+                    font-size: 20px;
+                    margin-bottom: 0;
+                }
+
+                .subtitle{
+                    margin-top: 0;
+                    color: #fff;
+                }
+            }
+        }
+    }
 }
