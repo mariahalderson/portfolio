@@ -9,12 +9,18 @@ const vm = new Vue({
           {title: "front-end developer"},
           {title: "UX designer"},
           {title: "a third thing"}
+        ],
+        projects: [
+          {projectid: "1", projectpath: "images/#", projecttitle: "project1", projecttype: "development",},
+          {projectid: "2", projectpath: "images/#", projecttitle: "project2", projecttype: "design",},
+          {projectid: "3", projectpath: "images/#", projecttitle: "project3", projecttype: "design",},
+          {projectid: "4", projectpath: "images/#", projecttitle: "project4", projecttype: "development",}
         ]
     },
 
-    created(){
-      this.getData();
-    },
+    // created(){
+    //   this.getData();
+    // },
 
     methods: {
 
