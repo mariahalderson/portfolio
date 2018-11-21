@@ -28,7 +28,7 @@
 </ul> -->
 
                 <p class="title">mariah alderson</p>
-                <p class="subtitle">front-end devloper   |   UX designer</p>
+                <p class="subtitle">front-end developer   |   UX designer</p>
 
                 <!-- <nav id="main navigation"> -->
                     <a class="navitem" id="portfolio"><div class="arrow downarrow"></div>portfolio</a>
@@ -42,8 +42,10 @@
     <section id="projects">
         <h2 class="hide">Spotlight Projects</h2>
 
+        <p class="title">projects</p>
+
         <div id="grid-container">
-            <div v-for="project in projects">
+            <div class="project-tile" v-for="project in projects">
                 <img :src="project.projectpath" :alt="project.projecttitle">
 
                 <div class="hover-info">

@@ -36,11 +36,16 @@
     transform: translateY(0px);
   }
 }
+section {
+  margin: 0;
+}
+
 .title {
   font-family: "Raleway-Black", "Arial", sans-serif;
   color: #95DBDC;
   font-size: 30px;
   font-weight: bold;
+  text-align: center;
 }
 
 .subtitle {
@@ -51,6 +56,19 @@
 
 .hide {
   display: none;
+}
+
+.button {
+  width: 200px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #F2D261;
+  color: #F2D261;
+  font-size: 20px;
+  font-family: "Raleway-Thin", "Arial", sans-serif;
+  margin: 0 auto;
 }
 
 body {
@@ -85,11 +103,14 @@ body {
 #landing header #logocontainer {
   grid-column: 2/6;
   grid-row: 2/3;
-  max-width: 175px;
+  max-width: 100%;
   align-self: end;
+  display: flex;
+  justify-content: center;
 }
 #landing header #logocontainer img {
-  max-width: 100%;
+  max-width: 90%;
+  display: block;
 }
 #landing header a {
   font-size: 20px;
@@ -123,6 +144,7 @@ body {
   grid-row: 3/4;
   align-self: start;
   justify-self: center;
+  margin-top: 20px;
 }
 #landing header #portfolio .arrow {
   animation: arrowsd 1s linear infinite;
@@ -149,6 +171,54 @@ body {
 }
 #landing header #resume .arrow {
   animation: arrowsl 1s linear infinite;
+}
+
+#projects {
+  background-image: url("../images/bckgd-mirror.svg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding-top: 220px;
+}
+#projects .title {
+  margin-top: 0;
+}
+#projects #grid-container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 325px);
+  justify-content: center;
+}
+#projects #grid-container .project-tile {
+  display: grid;
+  min-width: 320px;
+  min-height: 320px;
+  background-color: #95DBDC;
+  border: 2px solid #A3A3A3;
+}
+#projects #grid-container .project-tile img {
+  z-index: 1;
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+#projects #grid-container .project-tile .hover-info {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  padding: 7px;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#projects #grid-container .project-tile .hover-info .title {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+#projects #grid-container .project-tile .hover-info .subtitle {
+  margin-top: 0;
+  color: #fff;
 }
 
 /*# sourceMappingURL=main.css.map */
