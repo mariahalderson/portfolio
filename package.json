@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "watch": "sass --watch ./sass/main.scss:./css/main.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariahalderson/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariahalderson/portfolio/issues"
+  },
+  "homepage": "https://github.com/mariahalderson/portfolio#readme",
+  "devDependencies": {
+    "webpack": "^4.26.0"
+  }
+}

@@ -69,13 +69,18 @@ const vm = new Vue({
               porttext.innerHTML="<div class='arrow downarrow'></div>portfolio";
               porttext.style.marginLeft="-42px";
               homepage.style.backgroundSize="auto";
+              document.querySelector("#projects").style.backgroundAttachment="scroll";
+              setTimeout(function(){
+                window.scrollTo(0,0);
+               },300);
             }else{
               homepage.style.backgroundSize="cover";
               homepage.style.height="0px";
+              setTimeout(function(){
               document.querySelector("#projects").style.backgroundAttachment="fixed";
+              },300);
               porttext.innerHTML="<div class='arrow downarrow'></div>home";
               porttext.style.marginLeft="-27px";
-              
       
             }},200);
 
