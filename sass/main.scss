@@ -26,6 +26,12 @@ section{
     font-family: $copyfont
 }
 
+.copy{
+    color: $text;
+    font-family: $copyfont;
+    font-size: 16px;
+}
+
 .hide{
     display: none;
 }
